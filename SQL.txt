@@ -1,0 +1,15 @@
+1)        Display student names whose name start with ‘A’ or ‘a’
+Ans:  SELECT STUDENT NAME FROM STUDENT 
+          WHERE NAME LIKE '%A'  OR  NAME LIKE '%a';
+
+2)        Display student name and their subject’s total (English+Maths+Science)
+Ans:    Select Student.Name , English, Maths, Science
+           From Student, Mark
+           Where Student.StudentId = Mark.studentId;
+
+3)        Display ranker name [Means display student name whose total is greater than all others student]
+Ans :   Select Student.Name, English+Maths+Science "Total mark"
+            From student, Mark
+          Where  Student.StudentId =  Mark.StudentId 
+         Group by Total mark
+         Having Max(Total mark);
